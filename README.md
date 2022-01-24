@@ -16,7 +16,8 @@ You need [docker (≥v19)](https://www.docker.com/) and [docker-compose (≥v1.2
 
 ## Getting Started
 
-We explain the minimum structure. To reproduce the experiments, see [here](./REPRODUCTION.md).
+We explain the minimum structure. To reproduce the experiments, see [here](https://github.com/omron-sinicx/ctrm/wiki).
+The link also includes training data, benchmark instances, and trained models.
 
 ### Step 1. Create Environment via Docker
 - locally build docker image
@@ -98,7 +99,7 @@ The result will be saved in `/data/exp/zzzz-zz-zz_zz-zz-zz`.
 
 Probably, the planning in all instances will fail.
 To obtain successful results, we need more data and more training than the default parameters as presented here.
-Such examples are shown [here](./REPRODUCTION.md) (experimental settings).
+Such examples are shown [here](https://github.com/omron-sinicx/ctrm/wiki) (experimental settings).
 
 ## Notes
 
