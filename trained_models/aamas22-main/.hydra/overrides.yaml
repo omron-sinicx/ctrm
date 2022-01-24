@@ -1,0 +1,12 @@
+- datadir=/data/ctrm/demonstrations/learn_hetero/21-30
+- format_input.use_k_neighbor=true
+- format_input.num_neighbors=15
+- format_input.fov_encoder.map_size=160
+- format_input.fov_encoder.fov_size=19
+- format_input.without_comm=0
+- format_output.num_divide=3
+- format_output.use_back=0
+- dataloader.batch_size=50
+- num_epochs=1000
+- intermediate.eval=false
+- device=cuda:0

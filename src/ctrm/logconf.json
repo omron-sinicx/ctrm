@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "disable_existing_loggers": true,
+  "formatters": {
+    "default": {
+      "()": "coloredlogs.ColoredFormatter",
+      "format": "%(asctime)s | %(levelname)-8s | %(filename)-16s | %(funcName)-16s | L%(lineno)03d | %(message)s",
+      "datefmt": "%y/%m/%d %H:%M:%S"
+    }
+  },
+  "handlers": {
+    "consoleHandler": {
+      "class": "logging.StreamHandler",
+      "level": "DEBUG",
+      "formatter": "default"
+    }
+  },
+  "loggers": {
+    "ctrm": {
+      "level": "INFO",
+      "handlers": ["consoleHandler"],
+      "propagate": false
+    },
+    "__main__": {
+      "level": "INFO",
+      "handlers": ["consoleHandler"],
+      "propagate": false
+    }
+  },
+  "root": {
+    "level": "INFO"
+  }
+}

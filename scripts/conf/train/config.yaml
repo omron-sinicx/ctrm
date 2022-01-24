@@ -1,0 +1,57 @@
+defaults:
+  - format_input: ctrm
+  - format_output: ctrm
+  - model: ctrm
+
+# commons
+datadir: ???
+logdir: "/data/models"
+
+seed: 46
+num_epochs: 3
+progress_bar_disable: false
+device: null
+
+batch_generator:
+  _target_: ctrm.learning.batch_gen.FastBatchGenerator
+  sampling_rate: 1.0
+
+dataset:
+  _target_: ctrm.learning.Dataset
+  on_memory: true
+  preprocessing: true
+  use_weight: true
+  weight_gamma: 50
+  weight_epsilon: 0
+
+dataloader:
+  _target_: torch.utils.data.DataLoader
+  batch_size: 2
+  shuffle: true
+  drop_last: true
+
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 0.001
+
+intermediate:
+  eval: true
+  freq: 20
+  datadir: "${datadir}/val"
+  num_eval: 16
+  roadmap_gen:
+    _target_: ctrm.roadmap_learned.learned_sampler.get_timed_roadmaps_multiple_paths_with_learned_indicator
+    N_traj: 3
+    max_attempt: 10
+    max_T: 64
+    merge_distance_rate: 0
+  roadmap_viz:
+    _target_: ctrm.viz.plot_trms_all_step
+    return_numpy: true
+  planner:
+    _target_: ctrm.planner.PrioritizedPlanning
+    time_limit: 10
+
+hydra:
+  run:
+    dir: "${logdir}/${now:%Y-%m-%d_%H-%M-%S}"

@@ -1,0 +1,3 @@
+_target_: ctrm.roadmap.get_timed_roadmaps_grid_common
+T: 10
+size: 5

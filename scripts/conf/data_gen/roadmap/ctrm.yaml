@@ -1,0 +1,9 @@
+_target_: ctrm.roadmap_learned.learned_sampler.get_timed_roadmaps_multiple_paths_with_learned_indicator
+pred_basename: ???
+N_traj: 10
+prob_uniform_sampling_after_goal: 0.9
+prob_uniform_bias: 0
+prob_uniform_gamma: 15.0
+max_T: 64
+max_attempt: 3
+merge_distance_rate: 0.1

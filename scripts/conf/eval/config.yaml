@@ -1,0 +1,17 @@
+defaults:
+  - roadmap: random
+  - planner: pp
+
+# commons
+seed: 46
+rootdir: "/data/exp"
+insdir: "/workspace/data/sample/test"
+
+plot_2d_data: true
+progress_bar_disable: false
+max_eval_num: -1
+
+
+hydra:
+  run:
+    dir: "${rootdir}/${now:%Y-%m-%d_%H-%M-%S}"

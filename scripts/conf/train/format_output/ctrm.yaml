@@ -1,0 +1,3 @@
+_target_: ctrm.learning.formats.format_output.Format2D_CTRM_Output
+num_divide: 3
+use_back: false

@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  dev: &dev
+    build: .
+    image: omron-sinicx/ctrm
+    container_name: ${USER}.ctrm
+    volumes:
+      - $PWD:/workspace
+      - $PWD/../ctrm_data:/data
+    tty: true
+    stdin_open: true
+    ports:
+      - 8888:8888  # jupyte book
+      - 6006:6006  # tensorboard
+
+  dev-gpu:
+    <<: *dev
+    runtime: nvidia
+    environment:
+      - CUDA_VISIBLE_DEVICES=0

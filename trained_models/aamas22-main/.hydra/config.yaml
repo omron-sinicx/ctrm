@@ -1,0 +1,87 @@
+format_input:
+  _target_: ctrm.learning.formats.Format2D_CTRM_Input
+  include_self_attention: false
+  use_k_neighbor: true
+  num_neighbors: 15
+  without_comm: 0
+  fov_encoder:
+    _target_: ctrm.learning.model.FOVEncoder
+    dim_output: 32
+    dim_hidden: 32
+    map_size: 160
+    num_mid_layers: 1
+    fov_size: 19
+    use_sigmoid: false
+    use_batch_norm: false
+  fov_encoder_vain:
+    _target_: ctrm.learning.model.FOVEncoder
+    dim_output: 32
+    dim_hidden: 32
+    map_size: ${format_input.fov_encoder.map_size}
+    num_mid_layers: 1
+    fov_size: ${format_input.fov_encoder.fov_size}
+    use_sigmoid: ${format_input.fov_encoder.use_sigmoid}
+    use_batch_norm: ${format_input.fov_encoder.use_batch_norm}
+  agent_encoder:
+    _target_: ctrm.learning.model.AgentEncoder
+    dim_input: ${concat:11, ${format_input.fov_encoder_vain.dim_output}}
+    dim_message: 32
+    dim_attention: 10
+    dim_hidden: 32
+    num_mid_layers: 1
+    use_sigmoid: false
+    use_batch_norm: false
+format_output:
+  _target_: ctrm.learning.formats.format_output.Format2D_CTRM_Output
+  num_divide: 3
+  use_back: 0
+model:
+  _target_: ctrm.learning.model.CTRMNet
+  dim_hidden: 32
+  dim_latent: 64
+  temp: 2.0
+  num_mid_layers_encoder: 1
+  num_mid_layers_decoder: 1
+  kl_weight: 0.1
+datadir: /data/ctrm/demonstrations/learn_hetero/21-30
+logdir: /workspace/log
+seed: 46
+num_epochs: 1000
+progress_bar_disable: false
+device: cuda:0
+batch_generator:
+  _target_: ctrm.learning.batch_gen.FastBatchGenerator
+  sampling_rate: 1.0
+dataset:
+  _target_: ctrm.learning.Dataset
+  on_memory: true
+  preprocessing: true
+  use_weight: true
+  weight_gamma: 50
+  weight_epsilon: 0
+dataloader:
+  _target_: torch.utils.data.DataLoader
+  batch_size: 50
+  shuffle: true
+  drop_last: true
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 0.001
+intermediate:
+  eval: false
+  freq: 20
+  datadir: ${datadir}/val
+  num_eval: 16
+  roadmap_gen:
+    _target_: ctrm.roadmap_learned.learned_sampler.get_timed_roadmaps_multiple_paths
+    N_traj: 3
+    max_attempt: 10
+    max_T: 64
+    merge_distance_rate: 0
+    use_common_ind: true
+  roadmap_viz:
+    _target_: ctrm.viz.plot_trms_all_step
+    return_numpy: true
+  planner:
+    _target_: ctrm.planner.PrioritizedPlanning
+    time_limit: 10

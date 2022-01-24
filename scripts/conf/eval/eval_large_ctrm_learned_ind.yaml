@@ -1,0 +1,26 @@
+defaults:
+  - planner: pp
+
+roadmap:
+  _target_: ctrm.roadmap_learned.learned_sampler.get_timed_roadmaps_multiple_paths_with_learned_indicator
+  pred_basename: ???
+  N_traj: 25
+  prob_uniform_sampling_after_goal: 0.9
+  prob_uniform_bias: 0
+  prob_uniform_gamma: 5.0
+  randomize_indicator: false
+  max_T: 64
+  max_attempt: 3
+  merge_distance_rate: 0.1
+
+seed: 46
+rootdir: "/data/exp/"
+insdir: ???
+
+plot_2d_data: true
+progress_bar_disable: false
+max_eval_num: -1
+
+hydra:
+  run:
+    dir: "${rootdir}/ctrm_sampling/${now:%Y-%m-%d_%H-%M-%S}"

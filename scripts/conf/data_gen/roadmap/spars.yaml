@@ -1,0 +1,4 @@
+_target_: ctrm.roadmap.get_timed_roadamaps_SPARS_2d_common
+T: 10
+sparse_delta_fraction: 0.1
+time_limit_sec: 0.2

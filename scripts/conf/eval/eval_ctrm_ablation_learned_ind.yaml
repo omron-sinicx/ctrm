@@ -1,0 +1,27 @@
+defaults:
+  - planner: pp
+
+roadmap:
+  _target_: ctrm.roadmap_learned.learned_sampler.get_timed_roadmaps_multiple_paths_with_learned_indicator
+  pred_basename: ???
+  N_traj: 50
+  prob_uniform_sampling_after_goal: 0.9
+  prob_uniform_bias: 0
+  prob_uniform_gamma: 5.0
+  randomize_indicator: false
+  max_T: 64
+  max_attempt: 3
+  merge_distance_rate: 0.1
+
+seed: 46
+rootdir: "/data/exp/"
+insdir: "/data/benchmark/homo-basis"
+
+plot_2d_data: false
+progress_bar_disable: false
+max_eval_num: 100
+n_jobs: -1
+
+hydra:
+  run:
+    dir: "${rootdir}/ctrm_sampling_ablation/${now:%Y-%m-%d_%H-%M-%S}"

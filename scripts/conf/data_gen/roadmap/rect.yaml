@@ -1,0 +1,5 @@
+_target_: ctrm.roadmap.get_timed_roadmaps_random_rect
+T: 10
+sample_rate_vs_diag_speed: 10
+margin_rate_vs_speed: 1
+wo_invalid_samples: false

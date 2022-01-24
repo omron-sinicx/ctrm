@@ -1,0 +1,10 @@
+local/
+_pre_study/
+.git/
+data/
+log/
+**/.egg-info/
+**/*cache*
+**/.DS_Store
+**/.gitignore
+**/build/

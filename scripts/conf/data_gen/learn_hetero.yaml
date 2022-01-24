@@ -1,0 +1,26 @@
+defaults:
+  - instance: hetero
+
+roadmap:
+  _target_: ctrm.roadmap.get_timed_roadmaps_random
+  T: 64
+  num: 3000
+  wo_invalid_samples: true
+
+planner:
+  _target_: ctrm.planner.PrioritizedPlanning
+  time_limit: 600
+
+# commons
+rootdir: "/data/demonstrations/learn_hetero"
+n_jobs: -1
+seed: 100000
+exclude_failure: true
+data_nums:
+  train: 1000
+  val: 100
+  test: 100
+
+hydra:
+  run:
+    dir: "${rootdir}"

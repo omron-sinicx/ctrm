@@ -1,0 +1,18 @@
+defaults:
+  - instance: obs_spheres
+  - roadmap: random
+  - planner: pp
+
+# commons
+rootdir: "/data/demonstrations"
+n_jobs: -1
+seed: 46
+exclude_failure: true
+data_nums:
+  train: 10
+  val: 2
+  test: 2
+
+hydra:
+  run:
+    dir: "${rootdir}/${now:%Y-%m-%d_%H-%M-%S}"

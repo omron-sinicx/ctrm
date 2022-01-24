@@ -1,0 +1,32 @@
+_target_: ctrm.learning.formats.Format2D_CTRM_Input
+include_self_attention: false
+use_k_neighbor: false
+num_neighbors: 3
+without_comm: false
+fov_encoder:
+  _target_: ctrm.learning.model.FOVEncoder
+  dim_output: 32
+  dim_hidden: 32
+  map_size: 64
+  num_mid_layers: 1
+  fov_size: 25
+  use_sigmoid: false
+  use_batch_norm: false
+fov_encoder_vain:
+  _target_: ctrm.learning.model.FOVEncoder
+  dim_output: 32
+  dim_hidden: 32
+  map_size: ${format_input.fov_encoder.map_size}
+  num_mid_layers: 1
+  fov_size: ${format_input.fov_encoder.fov_size}
+  use_sigmoid: ${format_input.fov_encoder.use_sigmoid}
+  use_batch_norm: ${format_input.fov_encoder.use_batch_norm}
+agent_encoder:
+  _target_: ctrm.learning.model.AgentEncoder
+  dim_input: ${concat:11, ${format_input.fov_encoder_vain.dim_output}}
+  dim_message: 32
+  dim_attention: 10
+  dim_hidden: 32
+  num_mid_layers: 1
+  use_sigmoid: false
+  use_batch_norm: false

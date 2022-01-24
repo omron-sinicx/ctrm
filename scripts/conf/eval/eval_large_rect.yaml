@@ -1,0 +1,20 @@
+defaults:
+  - planner: pp
+
+roadmap:
+  _target_: ctrm.roadmap.get_timed_roadmaps_random_rect
+  T: 64
+  sample_rate_vs_diag_speed: ???
+  margin_rate_vs_speed: 5
+
+seed: 46
+rootdir: "/data/exp/"
+insdir: ???
+
+plot_2d_data: true
+progress_bar_disable: false
+max_eval_num: -1
+
+hydra:
+  run:
+    dir: "${rootdir}/rect_sampling/${now:%Y-%m-%d_%H-%M-%S}"

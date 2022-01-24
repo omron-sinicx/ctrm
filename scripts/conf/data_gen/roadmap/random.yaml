@@ -1,0 +1,4 @@
+_target_: ctrm.roadmap.get_timed_roadmaps_random_common
+T: 10
+num: 50
+wo_invalid_samples: false
