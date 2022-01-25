@@ -2,7 +2,7 @@
 
 This is a repository for the following paper:
 
-- Keisuke Okumura, Ryo Yonetani, Mai Nishimura, Asako Kanezaki, "CTRMs: Learning to Construct Cooperative Timed Roadmaps for Multi-agent Path Planning in Continuous Spaces," AAMAS, 2021 [[paper]()] [[project page](https://omron-sinicx.github.io/ctrm/)]
+- Keisuke Okumura, Ryo Yonetani, Mai Nishimura, Asako Kanezaki, "CTRMs: Learning to Construct Cooperative Timed Roadmaps for Multi-agent Path Planning in Continuous Spaces," AAMAS, 2022 [[paper](https://arxiv.org/abs/2201.09467)] [[project page](https://omron-sinicx.github.io/ctrm/)]
 
 ![](./assets/outline.png)
 
