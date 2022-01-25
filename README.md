@@ -138,11 +138,11 @@ This software is released under the MIT License, see [LICENCE](./LICENCE).
 
 ```
 # arXiv version
-@article{okumura2021ctrm,
+@article{okumura2022ctrm,
   title={CTRMs: Learning to Construct Cooperative Timed Roadmaps for Multi-agent Path Planning in Continuous Spaces},
   author={Okumura, Keisuke and Yonetani, Ryo and Nishimura, Mai and Kanezaki, Asako},
-  journal={arXiv preprint arXiv:xxxx.xxxxx},
-  year={2021}
+  journal={arXiv preprint arXiv:2201.09467},
+  year={2022}
 }
 ```
 
