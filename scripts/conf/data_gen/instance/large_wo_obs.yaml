@@ -1,0 +1,6 @@
+_target_: ctrm.environment.instance.generate_ins_2d_with_obs_sphere_nonfix_agents
+num_agents_min: 21
+num_agents_max: 30
+max_speed: 0.03125
+rad: 0.015625
+obs_num: 0

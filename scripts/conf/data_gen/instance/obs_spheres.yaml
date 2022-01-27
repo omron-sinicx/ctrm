@@ -1,0 +1,7 @@
+_target_: ctrm.environment.generate_ins_2d_with_obs_sphere
+num_agents: 3
+max_speed: 0.25
+rad: 0.1
+obs_num: 2
+obs_size_lower_bound: 0.05
+obs_size_upper_bound: 0.2

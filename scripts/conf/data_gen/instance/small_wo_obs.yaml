@@ -1,0 +1,5 @@
+_target_: ctrm.environment.generate_ins_2d_without_obs
+num_agents: 2
+max_speed: 0.2001  # for 6x6 grid
+rad: 0.0999  # for 6x6 grid
+min_dist: 0.6

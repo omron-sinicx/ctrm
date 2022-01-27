@@ -1,0 +1,4 @@
+_target_: ctrm.environment.generate_ins_2d_without_obs
+num_agents: 3
+max_speed: 0.25
+rad: 0.1
