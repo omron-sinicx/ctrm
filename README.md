@@ -137,6 +137,19 @@ This software is released under the MIT License, see [LICENCE](./LICENCE).
 ## Citation
 
 ```
+# aamas-22
+@inproceedings{okumura2022ctrm,
+  author = {Okumura, Keisuke and Yonetani, Ryo and Nishimura, Mai and Kanezaki, Asako},
+  title = {CTRMs: Learning to Construct Cooperative Timed Roadmaps for Multi-Agent Path Planning in Continuous Spaces},
+  year = {2022},
+  isbn = {9781450392136},
+  publisher = {International Foundation for Autonomous Agents and Multiagent Systems},
+  booktitle = {Proceedings of the 21st International Conference on Autonomous Agents and Multiagent Systems},
+  pages = {972–981},
+  numpages = {10},
+  series = {AAMAS '22}
+}
+
 # arXiv version
 @article{okumura2022ctrm,
   title={CTRMs: Learning to Construct Cooperative Timed Roadmaps for Multi-agent Path Planning in Continuous Spaces},
