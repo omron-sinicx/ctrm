@@ -1,6 +1,10 @@
 # anaconda base, python3.8.8
 FROM pytorch/pytorch:1.8.1-cuda10.2-cudnn7-devel
 
+# fixes : GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64  InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
 # build tools
 RUN apt-get -y update
 RUN apt-get -y install wget libssl-dev git
